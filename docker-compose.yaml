@@ -40,7 +40,9 @@ services:
       - 7lc_network
 
   grafana:
-    image: grafana/grafana:11.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile.grafana  # Reference the Dockerfile with the COPY command
     container_name: grafana
     restart: unless-stopped
     ports:
